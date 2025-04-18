@@ -4,7 +4,7 @@ FROM postgres:latest
 # Change the apt source to Aliyun
 RUN DEBIAN_VERSION=$(awk -F'=' '/VERSION_CODENAME/ {print $2}' /etc/os-release) \
     && echo "deb http://mirrors.aliyun.com/debian/ ${DEBIAN_VERSION} main contrib non-free" > /etc/apt/sources.list \
-    && echo "deb http://mirrors.aliyun.com/debian-security ${DEBIAN_VERSION}-security main" >> /etc/apt/sources.list \
+    && echo "deb http://mirrors.aliyun.com/debian-security ${DEBIAN_VERSION}-security main" >> /etc/apt/sources.list 
 
 # Install mawk and build dependencies for pgvector
 RUN apt-get update && \
