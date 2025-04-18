@@ -27,7 +27,6 @@ RUN git clone https://github.com/pgvector/pgvector.git && \
 # Clean up
 RUN apt-get remove --purge -y \
         build-essential \
-        mawk \
         git && \
     apt-get autoremove -y && \
     apt-get clean && \
